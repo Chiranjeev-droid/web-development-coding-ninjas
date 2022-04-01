@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer{
+            margin: 50px;
+            padding: 50px;
+            height: 200px;
+            width: 200px;
+            box-sizing: border-box;
+            background-color:red;
+        }
+        #inner{
+            height: 100px;
+            width: 100px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+
+        </div>
+    </div>
+   
+
+    <!-- dom hierachy:=> document->outerdiv->innerdiv. So when we click innerdiv, it triggers all the nodes from top to bottom. SO this is the reason why it will print both outer and inner div. -->
+    <!-- //event target is the element which is clicked -->
+    <!-- all the documents which are in path between document to that particular nodes, all nodes will get triggered. -->
+<script>
+    // var innerdiv=document.getElementById('inner');
+    // innerdiv.addEventListener('click',function(){
+    //     console.log("clicked innner div");
+    // })
+    var outerdiv=document.getElementById('outer');
+    outerdiv.addEventListener('click',function(){
+        console.log("clicked outer div");
+    })
+    document.addEventListener('click',function(){
+        console.log("clicked document");
+    })
+    //To stop the event propagation, recieve event in function. and then
+    var innerdiv=document.getElementById('inner');
+    innerdiv.addEventListener('click',function(event){
+        console.log("clicked innner div");
+        event.stopPropagation();
+    })
+</script>
+
+
+</body>
+</html>
