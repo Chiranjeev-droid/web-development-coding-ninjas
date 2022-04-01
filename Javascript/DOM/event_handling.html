@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="alert('You clicked this btn.')">Button</button>
+    <button id="btn2" style="color: aqua; cursor: pointer;" >Button2</button>
+    <button id="btn3" style="color: rgb(186, 43, 190); cursor: pointer;" >Button3</button>  
+    
+    <script>
+        
+        var bt2=document.getElementById('btn2');
+        bt2.addEventListener('click',function(){
+            alert("You had choosen to click button 2.")
+        })
+        var bt2=document.getElementById('btn2');
+        bt2.addEventListener('click',function(){
+            alert("You had choosen to click button 2.")
+        })
+        function sayHello(){
+            alert("Hello.");
+        }
+        function sayBye(){
+            alert("Bye. Tata . See You.");
+        }
+        var lastbtn=document.getElementById('btn3');
+        lastbtn.addEventListener('click',sayHello);
+        lastbtn.addEventListener('click',sayBye);
+    </script>
+
+</body>
+</html> 
